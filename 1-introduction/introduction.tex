@@ -18,7 +18,7 @@
 \documentclass[10pt,compress]{beamer} % Change 10pt to make fonts of a different size
 \mode<presentation>
 
-\usepackage[spanish]{babel}
+\usepackage[english,spanish]{babel}
 \usepackage{fontspec}
 \usepackage{tikz}
 \usepackage{etoolbox}
@@ -36,7 +36,7 @@
 \title[An informal introduction to Python]{An informal introduction to Python}
 \author{\asignatura\\\carrera}
 \institute{}
-\date{Departamento de Automática}
+\date{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -48,9 +48,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Configuración de logotipos en portada
 %% Opacidad de los logotipos
-\newcommand{\opacidad}{1}
+% \newcommand{\opacidad}{1}
 %% Descomentar para habilitar logotipo en pié de página de portada
-\renewcommand{\logoUno}{Images/isg.png}
+% \renewcommand{\logoUno}{Images/isg.png}
 %% Descomentar para habilitar logotipo en pié de página de portada
 %\renewcommand{\logoDos}{Images/CCLogo.png}
 %% Descomentar para habilitar logotipo en pié de página de portada
@@ -89,7 +89,7 @@
 	\begin{block}{Objectives}
 		\begin{enumerate}
 		\item Understand the main Python features, strengths and weaknesses
-		\item Overview the main Python statements
+		\item Overview the main Python structures
 		\item Being able to program na\"ive Python scripts
 		\end{enumerate}
 	\end{block}
@@ -113,7 +113,7 @@
 			Python is a general-purpose, high-level, interpreted programming language
 				\begin{itemize}
 				\item \textit{General-purpose}: Many applications.
-				\item \textit{High-level}: Abstract data structures, doing more with less code.
+				\item \textit{High-level}: Abstract data structures, \\doing more with less code.
 				\item \textit{Interpreted}: No need to compile.
 				\end{itemize}
 
@@ -138,7 +138,7 @@
 		\item Interpreted
 		\item Minimalistic syntax
 		\item Portable
-		\item Extensible - Bindings to other languages
+		\item Extensible -- Bindings to other languages
 		\item Embeddable
 		\item Application domains
 			\begin{itemize}
@@ -167,26 +167,26 @@
 		\vspace{-0.2cm}
 		\begin{block}{Python}
 		\vspace{-0.2cm}
-			\lstinputlisting{code/hello.py}
+			\lstinputlisting[basicstyle=\ttfamily]{code/hello.py}
 		\end{block}
 
 		\vspace{-0.2cm}
 		\begin{block}{Java}
 		\vspace{-0.2cm}
-			\lstinputlisting[language=java,basicstyle=\scriptsize]{code/hello.java}
+			\lstinputlisting[language=java,basicstyle=\ttfamily\tiny]{code/hello.java}
 		\end{block}
  	   \column{.50\textwidth}
 
 		\vspace{-0.2cm}
 		\begin{block}{C}
 		\vspace{-0.2cm}
-			\lstinputlisting[language=c,basicstyle=\scriptsize]{code/hello.c}
+			\lstinputlisting[language=c,basicstyle=\ttfamily\scriptsize]{code/hello.c}
 		\end{block}
 
 		\vspace{-0.2cm}
 		\begin{block}{C++}
 		\vspace{-0.2cm}
-			\lstinputlisting{code/hello.cpp}
+			\lstinputlisting[language=c,basicstyle=\ttfamily\scriptsize]{code/hello.cpp}
 		\end{block}
 	\end{columns}
 
@@ -215,14 +215,14 @@
 	\begin{itemize}
 		\item Python was designed to ease programmers' life
 	\end{itemize}
-	\item It is free software!
+	\item It is free/open software!
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Introduction}{Where Python is used?}
 	
 	\begin{itemize}
-	\item In Google. One of the development oficial languages
+	\item In Google. It's one of the development oficial languages.
 	
 	\item In YouTube.
 	
@@ -234,14 +234,14 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[plain]{Introduction}{Where python is not suitable?}
+\begin{frame}[plain]{Introduction}{Where is Pyhton not suitable?}
 	
-	But ... Python is not perfect.
+	But... Python is not perfect.
 	\begin{itemize}
-	\item It is not good for  ...
+	\item It is not good for...
 	\begin{itemize}
 	\item Applications that require high computing capacity.
-	\item Programming of low level (system-programming): programming of kernels, \textit{drivers}, etc.
+	\item Programming of low level (system-programming): programming of \textit{kernels}, \textit{drivers}, etc.
 	\item Very big programs (open discussion).
 	\end{itemize}
 	\end{itemize}
@@ -257,7 +257,7 @@
 				\item \textit{Python 3.0}: Released on 2008. Backwards-incompatible
 			\end{itemize}
 			\bigskip
-		\centering Python 2.X is still very popular, but Python 3.X is the future (deprecated from 2020)
+		\centering Python 2 still popular (deprecated from 2020), but Python 3.X is the version to use 
  	   \column{.30\textwidth}
 		\centering \includegraphics[width=\linewidth]{figs/guido.jpg}
 	\end{columns}
@@ -274,7 +274,7 @@
 			\end{itemize}
 		\item Bad news: There is no ``standard'' IDE
 			\begin{itemize}
-			\item PyCharm, Komodo, PyDev, ...
+			\item PyCharm, Komodo, PyDev, Spyder, MS Visual Studio Code ...
 			\item \url{http://wiki.python.org/moin/PythonEditors}
 			\end{itemize}
 	\end{itemize}
@@ -344,7 +344,7 @@ python script.py
 		Just run \texttt{python}
 			\begin{itemize}
 				\item Different names for different versions to avoid conflicts.
-				\item \texttt{python}, \texttt{python3.4}, ...
+				\item \texttt{python}, \texttt{python3.9}, ...
 			\end{itemize}
 
 		\vspace{-0.2cm}
@@ -363,7 +363,7 @@ python script.py
 	\begin{itemize}
 		\item No need to declare variables (Python is weakly typed!).
 		\item Python automatically assigns types.
-		\item Basic types: Numbers, strings and booleans.
+		\item Basic types: numbers, strings and booleans.
 	\end{itemize}
 	\textbf{Complex data structures}:
 		\begin{itemize}
@@ -444,7 +444,7 @@ variable = value
     \begin{columns}
     \column{.60\textwidth}
 		\begin{block}{ArithmeticDemo.py}
-		\lstinputlisting{code/operdemo.py}
+		\lstinputlisting[language=Python,basicstyle=\ttfamily\scriptsize]{code/operdemo.py}
 		\end{block}
 	\end{columns}
 
@@ -656,7 +656,7 @@ else:
 \begin{frame}[fragile]{Control flow}{Conditions (II)}
 	\begin{block}{Condition example}
 	\vspace{-0.2cm}
-		\lstinputlisting[basicstyle=\scriptsize]{code/if.py}
+		\lstinputlisting[language=Python,basicstyle=\ttfamily\scriptsize]{code/if.py}
 	\end{block}
 	\tiny{\href{http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/ifstatements.html}{(Source)}}
 	\\
@@ -688,7 +688,7 @@ else:
 \begin{frame}{Control flow}{While loop}
 	\begin{block}{Fibonacci series}
 	\vspace{-0.2cm}
-		\lstinputlisting[basicstyle=\scriptsize]{code/fibo.py}
+		\lstinputlisting[language=Python,basicstyle=\ttfamily\scriptsize]{code/fibo.py}
 	\end{block}
 
     New Python elements:
@@ -702,7 +702,7 @@ else:
 \subsection{Example 1: Multiplication table}
 \begin{frame}{Examples}{Example 1: Multiplication table}
 	\begin{block}{multi.py}
-		\lstinputlisting[basicstyle=\scriptsize]{code/multi.py}
+		\lstinputlisting[language=Python,basicstyle=\ttfamily\scriptsize]{code/multi.py}
 	\end{block}
 		\tiny{\href{http://www.pythonforbeginners.com/basics/using-math-in-python/}{Source}}
 \end{frame}
